@@ -31,8 +31,8 @@ def index(request):
 			'movie_data': movie_data
 		}
 
-        template = loader.get_template('search_results.html')
+        template = loader.get_template('Templates/search_results.html')
         
         return HttpResponse(template.render(context, request))
 
-	return render(request, 'index.html')
+    return render(request, 'home.html')
