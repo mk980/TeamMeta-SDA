@@ -1,0 +1,16 @@
+<h1>{{ movie.title }}</h1>
+<p>Release Date {{ movie.release_date }}</p>
+<p>Genres: {{ movie.genres }}</p>
+<p>Rating: {{ movie.rating }}</p>
+<p>Description: {{ movie.description }}</p>
+<p>Director: {{ movie.director }}</p>
+
+
+<h2>Actors</h2>
+<ul>
+    {% for actor in movie.actors.all %}
+        <li>{{ actor.name }}</li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'movie_list' %}">Back to Movie List</a>
