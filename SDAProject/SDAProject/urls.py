@@ -16,7 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from MovieScratch import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path("", views.movie_list, name="movie_list"),
+    path("admin/", admin.site.urls),
+    path("movie/<int:pk>", views.movie_detail, name="movie_detail"),
 ]
